@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
@@ -7,7 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="6.0.7" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Common\Armida.Notery.Common\Armida.Notery.Common.csproj" />
+    <ProjectReference Include="..\..\..\Data\EF\Armida.Notery.Data.EF.PostgreSQL\Armida.Notery.Data.EF.PostgreSQL.csproj" />
   </ItemGroup>
 
 </Project>
