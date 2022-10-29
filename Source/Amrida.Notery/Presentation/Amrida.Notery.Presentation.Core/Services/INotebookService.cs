@@ -1,9 +1,9 @@
 ﻿using Amrida.Notery.Presentation.Core.Models;
 using Armida.Notery.Common.DTOs;
 
-namespace Amrida.Notery.Presentation.Core.Repositories
+namespace Amrida.Notery.Presentation.Core.Services
 {
-    public interface INotebookRepository
+    public interface INotebookService
     {
         Task<IEnumerable<Notebook>> GetAll();
         Task<Notebook> GetById(Guid id);

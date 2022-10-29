@@ -11,6 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\Common\Armida.Notery.Common\Armida.Notery.Common.csproj" />
     <ProjectReference Include="..\..\..\Presentation\Amrida.Notery.Presentation.Core\Amrida.Notery.Presentation.Core.csproj" />
   </ItemGroup>
 

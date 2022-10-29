@@ -1,17 +1,32 @@
+using Amrida.Notery.Presentation.Core.Repositories;
+using Amrida.Notery.Presentation.Core.Services;
+using API.Profiles;
+using API.Services;
+using Armida.Notery.Data.EF;
 using Armida.Notery.Data.EF.PostgreSQL;
+using Armida.Notery.Data.EF.Repositories;
+using AutoMapper;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Options;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-builder
-    //Services Registration
-    //Services.AddScoped<IList<int>, List<int>>();
-    .Services.AddControllers()
+
+var mapperConfig = new MapperConfiguration(mc =>
+{
+    mc.AddProfile(new NoteryMappingProfile());
+});
+var mapper = mapperConfig.CreateMapper();
+builder.Services.AddSingleton(mapper);
+
+builder.Services.AddTransient<INotebookRepository, NotebookRepository>();
+builder.Services.AddScoped<INotebookService, NotebookService>();
+
+builder.Services.AddControllers()
     .Services.AddEndpointsApiExplorer()
     .AddSwaggerGen();
 
+builder.Services.AddScoped<IApplicationDataContext, NoteryDataContextPostreSQL>();
 builder.Services.AddEntityFrameworkNpgsql().AddDbContext<NoteryDataContextPostreSQL>(opt =>
         opt.UseNpgsql(builder.Configuration.GetConnectionString("NoteryDatabaseConnectionString")));
 
