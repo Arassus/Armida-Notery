@@ -2,7 +2,6 @@
 using Amrida.Notery.Presentation.Core.Repositories;
 using Armida.Notery.Common.DTOs;
 using Microsoft.EntityFrameworkCore;
-using System.Diagnostics.Tracing;
 
 namespace Armida.Notery.Data.EF.Repositories
 {

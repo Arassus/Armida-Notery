@@ -6,13 +6,13 @@ namespace Armida.Notery.Common.Dtos
     {
         public Guid? Id { get; set; }
 
-        [MaxLength(255)]
+        [Required, MaxLength(255)]
         [MinLength(3)]
-        public string Name { get; set; }
+        public string Name { get; set; } = string.Empty;
 
-        [MaxLength(4000)]
+        [Required, MaxLength(4000)]
         [MinLength(33)]
-        public string Description { get; set; }
+        public string Description { get; set; } = string.Empty;
 
         public bool? Removed { get; set; }
     }

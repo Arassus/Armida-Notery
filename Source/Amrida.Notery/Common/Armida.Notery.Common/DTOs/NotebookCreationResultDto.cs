@@ -5,6 +5,6 @@
         public Guid Id { get; set; }
         public bool Created { get; set; }
         public bool Finalized { get; set; }
-        public ICollection<string> Errors { get; set; }
+        public ICollection<string> Errors { get; set; } = new List<string>();
     }
 }

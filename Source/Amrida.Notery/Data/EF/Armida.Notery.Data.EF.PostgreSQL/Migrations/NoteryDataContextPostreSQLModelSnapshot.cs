@@ -10,7 +10,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace Armida.Notery.Data.EF.PostgreSQL.Migrations
 {
-    [DbContext(typeof(NoteryDataContextPostreSQL))]
+    [DbContext(typeof(NoteryDataContextPostgreSQL))]
     partial class NoteryDataContextPostreSQLModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)

@@ -10,8 +10,6 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-
 var mapperConfig = new MapperConfiguration(mc =>
 {
     mc.AddProfile(new NoteryMappingProfile());
@@ -26,8 +24,8 @@ builder.Services.AddControllers()
     .Services.AddEndpointsApiExplorer()
     .AddSwaggerGen();
 
-builder.Services.AddScoped<IApplicationDataContext, NoteryDataContextPostreSQL>();
-builder.Services.AddEntityFrameworkNpgsql().AddDbContext<NoteryDataContextPostreSQL>(opt =>
+builder.Services.AddScoped<IApplicationDataContext, NoteryDataContextPostgreSQL>();
+builder.Services.AddEntityFrameworkNpgsql().AddDbContext<NoteryDataContextPostgreSQL>(opt =>
         opt.UseNpgsql(builder.Configuration.GetConnectionString("NoteryDatabaseConnectionString")));
 
 var app = builder.Build();
@@ -35,7 +33,6 @@ var app = builder.Build();
 //app.UseAuthentication();
 //app.UseCookiePolicy();
 
-// Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger()

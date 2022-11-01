@@ -11,7 +11,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace Armida.Notery.Data.EF.PostgreSQL.Migrations
 {
-    [DbContext(typeof(NoteryDataContextPostreSQL))]
+    [DbContext(typeof(NoteryDataContextPostgreSQL))]
     [Migration("20221026200544_initial_migrations")]
     partial class initial_migrations
     {
