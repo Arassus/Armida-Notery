@@ -14,6 +14,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\Data\EF\Armida.Notery.Data.EF.PostgreSQL\Armida.Notery.Data.EF.PostgreSQL.csproj" />
+    <ProjectReference Include="..\Data\EF\Amrida.Notery.Identity.Data.EF.PostgreSQL\Amrida.Notery.Identity.Data.EF.PostgreSQL.csproj" />
+    <ProjectReference Include="..\Data\EF\Amrida.Notery.Identity.Data.EF\Amrida.Notery.Identity.Data.EF.csproj" />
   </ItemGroup>
 
 </Project>

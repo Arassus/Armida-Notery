@@ -33,15 +33,19 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Amrida.Notery.Presentation.
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Identity", "Identity", "{B8F02560-2D75-453D-B956-409E8B6B3ACC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Amrida.Notery.Identity", "Identity\Amrida.Notery.Identity\Amrida.Notery.Identity.csproj", "{08169F0D-AB2F-4195-A37D-304844227327}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Amrida.Notery.Identity", "Identity\Amrida.Notery.Identity\Amrida.Notery.Identity.csproj", "{08169F0D-AB2F-4195-A37D-304844227327}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{308A80C7-4D23-4011-9D28-A71ABDA1A7F1}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EF", "EF", "{7E90E735-D89C-4E12-9CA9-70E7D4B76FD3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Amrida.Notery.Identity.Data.EF", "Identity\Data\EF\Amrida.Notery.Identity.Data.EF\Amrida.Notery.Identity.Data.EF.csproj", "{E24C46CA-17F2-4D2D-A3F6-6EEA3DFD95C1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Amrida.Notery.Identity.Data.EF", "Identity\Data\EF\Amrida.Notery.Identity.Data.EF\Amrida.Notery.Identity.Data.EF.csproj", "{E24C46CA-17F2-4D2D-A3F6-6EEA3DFD95C1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Amrida.Notery.Identity.Data.EF.PostgreSQL", "Identity\Data\EF\Amrida.Notery.Identity.Data.EF.PostgreSQL\Amrida.Notery.Identity.Data.EF.PostgreSQL.csproj", "{3C2748CF-0CB4-4162-AAB3-397135955DFF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Amrida.Notery.Identity.Data.EF.PostgreSQL", "Identity\Data\EF\Amrida.Notery.Identity.Data.EF.PostgreSQL\Amrida.Notery.Identity.Data.EF.PostgreSQL.csproj", "{3C2748CF-0CB4-4162-AAB3-397135955DFF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{5CCFA1A6-C89C-4505-821F-16CE8292885C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Amrida.Notery.Identity.Core", "Identity\Core\Amrida.Notery.Identity.Core\Amrida.Notery.Identity.Core.csproj", "{C7843393-4FC1-455C-8E2D-6E484FD2E26B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -89,6 +93,10 @@ Global
 		{3C2748CF-0CB4-4162-AAB3-397135955DFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3C2748CF-0CB4-4162-AAB3-397135955DFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3C2748CF-0CB4-4162-AAB3-397135955DFF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C7843393-4FC1-455C-8E2D-6E484FD2E26B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7843393-4FC1-455C-8E2D-6E484FD2E26B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7843393-4FC1-455C-8E2D-6E484FD2E26B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7843393-4FC1-455C-8E2D-6E484FD2E26B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -108,6 +116,8 @@ Global
 		{7E90E735-D89C-4E12-9CA9-70E7D4B76FD3} = {308A80C7-4D23-4011-9D28-A71ABDA1A7F1}
 		{E24C46CA-17F2-4D2D-A3F6-6EEA3DFD95C1} = {7E90E735-D89C-4E12-9CA9-70E7D4B76FD3}
 		{3C2748CF-0CB4-4162-AAB3-397135955DFF} = {7E90E735-D89C-4E12-9CA9-70E7D4B76FD3}
+		{5CCFA1A6-C89C-4505-821F-16CE8292885C} = {B8F02560-2D75-453D-B956-409E8B6B3ACC}
+		{C7843393-4FC1-455C-8E2D-6E484FD2E26B} = {5CCFA1A6-C89C-4505-821F-16CE8292885C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E57E3C08-71D3-47F1-9006-79D4EEE1EDF2}

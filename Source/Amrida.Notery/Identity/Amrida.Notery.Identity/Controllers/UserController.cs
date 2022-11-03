@@ -1,38 +1,82 @@
-﻿using Armida.Notery.Common.DTOs.Identity;
+﻿using Amrida.Notery.Identity.Core.Services;
+using Amrida.Notery.Identity.Core.Utils;
+using Armida.Notery.Common.DTOs.Identity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Amrida.Notery.Identity.Controllers
 {
     public class UserController : Controller
     {
-        [HttpPost("register")]
-        public IActionResult Register(UserRegisterRequestDto request)
+        private readonly IIdentityDataService _identityDataService;
+
+        public UserController(IIdentityDataService identityDataService)
         {
-            return Ok("No user yet");
+            _identityDataService = identityDataService;
+        }
+
+        [HttpPost("register")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public async Task<IActionResult> UserRegister(UserRegisterRequestDto request)
+        {
+            var result = await _identityDataService.UserRegister(request);
+
+            if (IdentityOperationResultCode.UserCreatedSuccessfully == result.Code)
+                return Ok(result.Message);
+            
+            return BadRequest(result.Message);
         }
 
         [HttpPost("login")]
-        public IActionResult Login(UserLoginRequestDto request)
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public async Task<IActionResult> UserLogin(UserLoginRequestDto request)
         {
-            return Ok("Whatever . . .");
+            var result = await _identityDataService.UserLogin(request);
+
+            if (IdentityOperationResultCode.UserLoggedIn == result.Code)
+                return Ok(result.Message);
+
+            return BadRequest(result.Message);
         }
 
         [HttpPost("verify")]
-        public IActionResult Verify(string token)
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public async Task<IActionResult> UserVerify(string token)
         {
-            return Ok("Seems legit");
+            var result = await _identityDataService.UserVerifyByToken(token);
+
+            if (IdentityOperationResultCode.UserVerified == result.Code)
+                return Ok(result.Message);
+
+            return BadRequest(result.Message);
         }
 
         [HttpPost("forgot-password")]
-        public IActionResult ForgotPassword(string email)
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public async Task<IActionResult> UserForgotPassword(string email)
         {
-            return Ok("The safety word is 'banana'");
+            var result = await _identityDataService.UserForgotPassword(email);
+
+            if (IdentityOperationResultCode.UserCanResetPassword == result.Code)
+                return Ok(result.Message);
+
+            return BadRequest(result.Message);
         }
 
         [HttpPost("reset-password")]
-        public IActionResult ResettPassword(UserResetPasswordRequestDto request)
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public async Task<IActionResult> UserResetPassword(UserResetPasswordRequestDto request)
         {
-            return Ok("Password reset");
+            var result = await _identityDataService.UserResetPassword(request);
+
+            if (IdentityOperationResultCode.UserResetPasswordSuccess == result.Code)
+                return Ok(result.Message);
+
+            return BadRequest(result.Message);
         }
     }
 }

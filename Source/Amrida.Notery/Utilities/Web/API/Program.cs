@@ -29,9 +29,6 @@ builder.Services.AddEntityFrameworkNpgsql().AddDbContext<NoteryDataContextPostgr
         opt.UseNpgsql(builder.Configuration.GetConnectionString("NoteryDatabaseConnectionString")));
 
 var app = builder.Build();
-//Register middleware here
-//app.UseAuthentication();
-//app.UseCookiePolicy();
 
 if (app.Environment.IsDevelopment())
 {
