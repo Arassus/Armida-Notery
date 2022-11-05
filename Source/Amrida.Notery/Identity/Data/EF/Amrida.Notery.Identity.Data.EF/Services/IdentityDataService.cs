@@ -54,7 +54,7 @@ namespace Amrida.Notery.Identity.Data.EF.Services
             if (user.VeryficationDate == null)
                 return IdentityOperationResult.UserNotVerified;
 
-            return IdentityOperationResult.UserVerified;
+            return IdentityOperationResult.UserLoggedIn;
         }
 
         public async Task<IdentityOperationResult> UserVerifyByToken(string verificationToken)
