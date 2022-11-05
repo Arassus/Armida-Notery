@@ -21,9 +21,9 @@ namespace Amrida.Notery.Identity.Data.EF.Repositories
             var savingResult = await _dataContext.SaveChangesAsync();
 
             if (savingResult > 0)
-                return IdentityOperationResult.ChangesNotSaved;
+                return IdentityOperationResult.UserCreatedSuccessfully;
 
-            return IdentityOperationResult.ChangesSaved;
+            return IdentityOperationResult.ChangesNotSaved;
         }
 
         public async Task<User> GetUserByEmail(string email) =>
@@ -40,9 +40,9 @@ namespace Amrida.Notery.Identity.Data.EF.Repositories
             var savingResult = await _dataContext.SaveChangesAsync();
 
             if (savingResult > 0)
-                return IdentityOperationResult.ChangesNotSaved;
+                return IdentityOperationResult.ChangesSaved;
 
-            return IdentityOperationResult.ChangesSaved;
+            return IdentityOperationResult.ChangesNotSaved;
         }
 
         public IdentityOperationResult UserExistsByEmail(string email)

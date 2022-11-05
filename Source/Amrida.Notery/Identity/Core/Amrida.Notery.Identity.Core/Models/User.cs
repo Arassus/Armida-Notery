@@ -1,8 +1,11 @@
-﻿namespace Amrida.Notery.Identity.Core.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Amrida.Notery.Identity.Core.Models
 {
     public class User
     {
-        public int Id { set; get; }
+        [Key]
+        public Guid Id { set; get; }
         public string Email { set; get; } = string.Empty;
         public DateTime? VeryficationDate { get; set; }
         public DateTime? ResetTokenExpirationDate { get; set; }

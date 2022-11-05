@@ -31,6 +31,7 @@ namespace Amrida.Notery.Identity.Data.EF.Services
 
             var user = new User
             {
+                Id = Guid.NewGuid(),
                 Email = request.Email,
                 PasswordHash = passwordHash,
                 PasswordSalt = passwordSalt,

@@ -3,6 +3,7 @@ using System;
 using Amrida.Notery.Identity.Data.EF.PostgreSQL;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,9 +12,10 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Amrida.Notery.Identity.Data.EF.PostgreSQL.Migrations
 {
     [DbContext(typeof(IdentityDataContextPostgreSQL))]
-    partial class IdentityDataContextPostgreSQLModelSnapshot : ModelSnapshot
+    [Migration("20221105084613_RemoveId")]
+    partial class RemoveId
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -24,7 +26,7 @@ namespace Amrida.Notery.Identity.Data.EF.PostgreSQL.Migrations
 
             modelBuilder.Entity("Amrida.Notery.Identity.Core.Models.User", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<Guid>("UserId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uuid");
 
@@ -52,7 +54,7 @@ namespace Amrida.Notery.Identity.Data.EF.PostgreSQL.Migrations
                     b.Property<DateTime?>("VeryficationDate")
                         .HasColumnType("timestamp with time zone");
 
-                    b.HasKey("Id");
+                    b.HasKey("UserId");
 
                     b.ToTable("Users");
                 });
