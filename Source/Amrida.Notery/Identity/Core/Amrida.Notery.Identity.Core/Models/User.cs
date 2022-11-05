@@ -2,7 +2,7 @@
 {
     public class User
     {
-        public Guid Id { set; get; }
+        public int Id { set; get; }
         public string Email { set; get; } = string.Empty;
         public DateTime? VeryficationDate { get; set; }
         public DateTime? ResetTokenExpirationDate { get; set; }

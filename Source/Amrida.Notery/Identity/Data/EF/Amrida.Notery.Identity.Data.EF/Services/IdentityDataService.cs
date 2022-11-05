@@ -20,7 +20,7 @@ namespace Amrida.Notery.Identity.Data.EF.Services
 
         public async Task<IdentityOperationResult> UserRegister(UserRegisterRequestDto request)
         {
-            var result = await _identityRepository.UserExistsByEmail(request.Email);
+            var result = _identityRepository.UserExistsByEmail(request.Email);
 
             if (IdentityOperationResultCode.UserExists == result.Code)
                 return result;

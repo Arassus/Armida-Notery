@@ -22,7 +22,7 @@ namespace Amrida.Notery.Identity.Data.EF.PostgreSQL.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
-            modelBuilder.Entity("Amrida.Notery.Identity.Core.Models.User", b =>
+            modelBuilder.Entity("Amrida.Notery.Identity.Data.EF.Data.User", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -56,7 +56,7 @@ namespace Amrida.Notery.Identity.Data.EF.PostgreSQL.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Users");
+                    b.ToTable("Users", (string)null);
                 });
 #pragma warning restore 612, 618
         }

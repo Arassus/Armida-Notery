@@ -20,13 +20,13 @@ namespace Amrida.Notery.Identity.Data.EF.Repositories
             _dataContext.Users.Add(model);
             var savingResult = await _dataContext.SaveChangesAsync();
 
-            if(savingResult > 0)
+            if (savingResult > 0)
                 return IdentityOperationResult.ChangesNotSaved;
 
             return IdentityOperationResult.ChangesSaved;
         }
 
-        public async Task<User> GetUserByEmail(string email) => 
+        public async Task<User> GetUserByEmail(string email) =>
             await _dataContext.Users.FirstOrDefaultAsync(u => u.Email == email);
 
         public async Task<User> GetUserByResetPasswordToken(string resetToken) =>
@@ -45,9 +45,12 @@ namespace Amrida.Notery.Identity.Data.EF.Repositories
             return IdentityOperationResult.ChangesSaved;
         }
 
-        public Task<IdentityOperationResult> UserExistsByEmail(string email)
+        public IdentityOperationResult UserExistsByEmail(string email)
         {
-            throw new NotImplementedException();
+            if (_dataContext.Users.Any(u => email == u.Email))
+                return IdentityOperationResult.UserExists;
+
+            return IdentityOperationResult.UserDoesNotExist;
         }
     }
 }
