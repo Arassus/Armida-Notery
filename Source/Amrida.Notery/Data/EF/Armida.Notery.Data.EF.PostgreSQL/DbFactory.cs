@@ -13,7 +13,7 @@ namespace Armida.Notery.Data.EF.PostgreSQL
         public NoteryDataContextPostgreSQL CreateDbContext(string[] args)
         {
             var builder = new DbContextOptionsBuilder<NoteryDataContextPostgreSQL>();
-            builder.UseNpgsql("User ID =noterydev;Password=12345678;Server=localhost;Port=5432;Database=sampledb; Integrated Security=true;Pooling=true;");
+            builder.UseNpgsql("PostgresConnectionString");
             return new NoteryDataContextPostgreSQL(builder.Options);
         }
     }
